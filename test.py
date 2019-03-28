@@ -51,9 +51,9 @@ mul_e = put('http://localhost:5000/fhe/mul', data={"a": context_b64e, 'b': publi
 
 #Assuming that ciphertext is received, verify reliability
 
-sum_d = base64.b64decode(bytes(sum_e.get('add'), "utf-8"))
-sub_d = base64.b64decode(bytes(sub_e.get('sub'), "utf-8"))
-mul_d = base64.b64decode(bytes(mul_e.get('mul'), "utf-8"))
+sum_d = base64.b64decode(bytes(sum_e, "utf-8"))
+sub_d = base64.b64decode(bytes(sub_e, "utf-8"))
+mul_d = base64.b64decode(bytes(mul_e, "utf-8"))
 
 with open("txt.c1", "wb") as t1_f:
     t1_f.write(sum_d)
